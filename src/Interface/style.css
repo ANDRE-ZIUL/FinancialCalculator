@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'display';
+    src: url('../components/Fonts/Technology-Bold.ttf');
+}
+
+.financial-calculator {
+    width: 894px;
+    height: 560px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid black;
+    background: #0c1111;
+
+    .financial-calculator-header {
+        width: 93%;
+        height: 27%;
+        margin: 5px auto;
+        background: #d1d4ae;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 60px;
+            height: 60px;
+            margin-left: 30%;
+        }
+
+        .financial-calculator-display {
+            margin-left: 10%;
+            width: 50%;
+            height: 60%;
+            border: 8px solid #dbcf27;
+            background: #95ab60;
+            display: flex;
+            border-radius: 10px;
+            font-family: 'display';
+            font-size: 60px;
+            font-weight: 700;
+        }
+    }
+
+    .financial-calculator-keyboard {
+        width: 93%;
+        height: 65%;
+        border: 8px solid #d1d4ae;
+        margin: 15px auto;
+
+        .financial-calculator-keyboard-line {
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 25px;
+            margin-bottom: 15px;
+        }
+
+        .financial-calculator-bottom {
+            display: flex;
+            gap: 25px;
+
+            .financial-calculator-keyboard-second {
+                display: flex;
+                flex-direction: column;
+                width: 375px;
+                height: 180px;
+                gap: 25px;
+                margin-left: 20px;
+            }
+        }
+
+
+        .financial-calculator-keyboard-third-line {
+
+        }
+
+        .financial-calculator-keyboard-fourth-line {
+
+        }
+    }
+}

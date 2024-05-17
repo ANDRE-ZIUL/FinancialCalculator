@@ -1,0 +1,33 @@
+.button {
+    width: 54px;
+    height: 70px;
+    background: transparent;
+    text-align: center;
+    
+    .character-top {
+        color: orange;
+        font-size: 15px;
+    }
+    
+    button {
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 54px;
+        height: 46px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+
+        .character-center {
+            color: white;
+            font-size: 20px;
+        }
+
+        .character-bottom {
+            color: rgb(113, 113, 235);
+            font-size: 10px;
+        }
+    }
+}
