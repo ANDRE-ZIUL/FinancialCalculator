@@ -11,7 +11,7 @@
     
     button {
         background: black;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         border-radius: 5px;
         width: 54px;
         height: 141px;
@@ -20,6 +20,12 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
+        box-shadow: rgb(75, 73, 73) 0px 5px 0px 0px;
+
+        &&:hover {
+            margin-top: 4px;
+            box-shadow: rgb(75, 73, 73) 0px 1px 0px 0px;
+        }
 
         .enter-character-center {
             color: white;

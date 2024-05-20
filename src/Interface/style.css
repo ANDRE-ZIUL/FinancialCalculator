@@ -10,6 +10,7 @@
     margin-top: 30px;
     border: 1px solid black;
     background: #0c1111;
+    border-radius: 10px;
 
     .financial-calculator-header {
         width: 93%;
@@ -18,11 +19,12 @@
         background: #d1d4ae;
         display: flex;
         align-items: center;
+        border-radius: 10px 10px 0px 0px;
 
         img {
-            width: 60px;
-            height: 60px;
-            margin-left: 30%;
+            width: 130px;
+            height: 130px;
+            margin-left: 32%;
         }
 
         .financial-calculator-display {
@@ -68,12 +70,11 @@
         }
 
 
-        .financial-calculator-keyboard-third-line {
-
-        }
-
-        .financial-calculator-keyboard-fourth-line {
-
+        .financial-calculator-keyboard-third {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px 26px;
+            height: 180px
         }
     }
 }

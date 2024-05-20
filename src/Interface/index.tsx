@@ -167,6 +167,48 @@ export const FinancialCalculator: React.FC = () => {
             </div>
           </div>
           <Enter characterTop="PREFIX" characterBottom="LST X" />
+          <div className="financial-calculator-keyboard-third">
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="1"
+              characterBottom="x . r"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="2"
+              characterBottom="y . r"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="3"
+              characterBottom="n !"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="-"
+              characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="0"
+              characterBottom="x"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="."
+              characterBottom="s"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="Σ +"
+              characterBottom="Σ -"
+            />
+            <Button
+              characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+              characterCenter="-"
+              characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+            />
+          </div>
         </div>
         <div className="financial-calculator-keyboard-fourth-line"></div>
       </div>

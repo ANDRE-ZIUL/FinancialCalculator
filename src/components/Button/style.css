@@ -3,6 +3,7 @@
     height: 70px;
     background: transparent;
     text-align: center;
+    cursor: pointer;
     
     .character-top {
         color: orange;
@@ -10,7 +11,7 @@
     }
     
     button {
-        border: 1px solid white;
+        /* border: 1px solid white; */
         border-radius: 5px;
         width: 54px;
         height: 46px;
@@ -19,15 +20,24 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
+        cursor: pointer;
+        box-shadow: rgb(75, 73, 73) 0px 5px 1px 0px;
+
+        &&:hover {
+            margin-top: 4px;
+            box-shadow: rgb(75, 73, 73) 0px 1px 0px 0px;
+        }
 
         .character-center {
             color: white;
             font-size: 20px;
+            cursor: pointer;
         }
 
         .character-bottom {
             color: rgb(113, 113, 235);
             font-size: 10px;
+            cursor: pointer;
         }
     }
 }
