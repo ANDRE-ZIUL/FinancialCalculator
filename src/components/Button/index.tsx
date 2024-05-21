@@ -5,7 +5,7 @@ interface ButtonProps {
   characterCenter: string;
   characterTop?: string;
   characterBottom?: string;
-  backgroundColor?: "black" | "blue" | "yellow";
+  backgroundColor?: "black" | "blue" | "yellow" | "orange";
   fontColor?: "black" | "white";
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }
