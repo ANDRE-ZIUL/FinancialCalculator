@@ -12,6 +12,38 @@ export const FinancialCalculator: React.FC = () => {
   const [display, setDisplay] = useState<string>("0.00");
   const [F, setF] = useState<boolean>(false);
   const [CHSON, setCHSON] = useState<boolean>(false);
+  const [Y, setY] = useState<string>("0");
+  const [X, setX] = useState<string>("0");
+  const [Lx, setLx] = useState<string>("0");
+  const [operator, setOperator] = useState<string>("");
+
+  const handleSetY = (value: string) => {
+    setY(value);
+    setDisplay("0.00");
+  };
+
+  const handleSetX = (value: string) => {
+    setX(value);
+  };
+
+  const handleBasicCalc = () => {
+    if (
+      operator === "*" ||
+      operator === "+" ||
+      operator === "-" ||
+      operator === "/"
+    ) {
+      const result = eval(`${Y} ${operator} ${X}`);
+      setDisplay(result);
+      setY(result);
+      setX("");
+      setOperator("");
+    }
+  };
+
+  useEffect(() => {
+    handleBasicCalc();
+  }, [operator]);
 
   useEffect(() => {
     setDisplay(FV);
@@ -32,6 +64,9 @@ export const FinancialCalculator: React.FC = () => {
       setN("0");
       setFV("0");
       setPV("0");
+      setY("0");
+      setX("0");
+      setLx("0");
       setDisplay("0.00");
     }
     setF(false);
@@ -60,6 +95,7 @@ export const FinancialCalculator: React.FC = () => {
     }
 
     setDisplay(formattedDisplay);
+    handleSetX(display);
   };
 
   const handleSetPV = (value: string) => {
@@ -154,7 +190,7 @@ export const FinancialCalculator: React.FC = () => {
               characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
               characterCenter="÷"
               characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              onClick={() => handleSetDisplayValue("/")}
+              onClick={() => setOperator("/")}
             />
           </div>
           <div className="financial-calculator-keyboard-line">
@@ -210,7 +246,7 @@ export const FinancialCalculator: React.FC = () => {
               characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
               characterCenter="x"
               characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-              onClick={() => handleSetDisplayValue("*")}
+              onClick={() => setOperator("*")}
             />
           </div>
           <div className="financial-calculator-bottom">
@@ -276,7 +312,11 @@ export const FinancialCalculator: React.FC = () => {
                 />
               </div>
             </div>
-            <Enter characterTop="PREFIX" characterBottom="LST X" />
+            <Enter
+              characterTop="PREFIX"
+              characterBottom="LST X"
+              onClick={() => handleSetY(display)}
+            />
             <div className="financial-calculator-keyboard-third">
               <Button
                 characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
@@ -300,7 +340,7 @@ export const FinancialCalculator: React.FC = () => {
                 characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
                 characterCenter="-"
                 characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-                onClick={() => handleSetDisplayValue("-")}
+                onClick={() => setOperator("-")}
               />
               <Button
                 characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
@@ -323,7 +363,7 @@ export const FinancialCalculator: React.FC = () => {
                 characterTop="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
                 characterCenter="+"
                 characterBottom="⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-                onClick={() => handleSetDisplayValue("+")}
+                onClick={() => setOperator("+")}
               />
             </div>
           </div>
@@ -333,24 +373,32 @@ export const FinancialCalculator: React.FC = () => {
         </div>
       </div>
       <div className="financial-calculator-registers">
-        <h6>
+        <label className="financial-calculator-registers-title">
           <b>Registros</b>
-        </h6>
-        <label>
-          <b>n:</b>
-          {n}
         </label>
-        <label>
-          <b>i:</b>
-          {i}
+        <label className="financial-calculator-registers-variables">
+          n:
+          <span>{n}</span>
         </label>
-        <label>
-          <b>PV:</b>
-          {PV}
+        <label className="financial-calculator-registers-variables">
+          i:
+          <span>{i}</span>
         </label>
-        <label>
-          <b>FV:</b>
-          {FV}
+        <label className="financial-calculator-registers-variables">
+          PV:
+          <span>{PV}</span>
+        </label>
+        <label className="financial-calculator-registers-variables">
+          FV:
+          <span>{FV}</span>
+        </label>
+        <label className="financial-calculator-registers-variables">
+          X:
+          <span>{X}</span>
+        </label>
+        <label className="financial-calculator-registers-variables">
+          Y:
+          <span>{Y}</span>
         </label>
       </div>
     </div>
