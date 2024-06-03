@@ -32,11 +32,14 @@ export const FinancialCalculator: React.FC = () => {
       operator === "-" ||
       operator === "/"
     ) {
-      const result = eval(`${Y} ${operator} ${X}`);
-      setDisplay(result);
-      setY(result);
-      setX("0");
-      setOperator("");
+      if (operator === "/" && X === "0") {
+        setDisplay("INVALID");
+      } else {
+        const result = eval(`${Y} ${operator} ${X}`);
+        setDisplay(result);
+        setY(result);
+        setX("0");
+      }
     }
   };
 
