@@ -14,7 +14,6 @@ export const FinancialCalculator: React.FC = () => {
   const [CHSON, setCHSON] = useState<boolean>(false);
   const [Y, setY] = useState<string>("0");
   const [X, setX] = useState<string>("0");
-  const [Lx, setLx] = useState<string>("0");
   const [operator, setOperator] = useState<string>("");
 
   const handleSetY = (value: string) => {
@@ -36,13 +35,14 @@ export const FinancialCalculator: React.FC = () => {
       const result = eval(`${Y} ${operator} ${X}`);
       setDisplay(result);
       setY(result);
-      setX("");
+      setX("0");
       setOperator("");
     }
   };
 
   useEffect(() => {
     handleBasicCalc();
+    // eslint-disable-next-line
   }, [operator]);
 
   useEffect(() => {
@@ -66,7 +66,6 @@ export const FinancialCalculator: React.FC = () => {
       setPV("0");
       setY("0");
       setX("0");
-      setLx("0");
       setDisplay("0.00");
     }
     setF(false);
@@ -95,7 +94,7 @@ export const FinancialCalculator: React.FC = () => {
     }
 
     setDisplay(formattedDisplay);
-    handleSetX(display);
+    handleSetX(formattedDisplay);
   };
 
   const handleSetPV = (value: string) => {
